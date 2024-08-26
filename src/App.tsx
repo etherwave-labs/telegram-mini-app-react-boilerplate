@@ -8,6 +8,7 @@ function App() {
 
   return (
     <div className="flex flex-col gap-10">
+      <a href={`/test`}>Go to Test Page</a>
       <div className="flex gap-4 items-center justify-center">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,7 +29,6 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <a href={`/test`}>Test Page</a>
     </div>
   );
 }

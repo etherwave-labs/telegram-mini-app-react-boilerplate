@@ -14,7 +14,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/test",
-    element: <div>Hello world!</div>,
+    element: (
+      <>
+        <h1 className="text-4xl font-bold">Test Page</h1>
+        <div className="flex flex-col justify-center">
+          <a href={`/`}>Back</a>
+        </div>
+      </>
+    ),
   },
 ]);
 
