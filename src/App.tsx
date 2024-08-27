@@ -35,7 +35,7 @@ function App() {
       </div>
       <h1 className="text-4xl font-bold">Hello world!</h1>
 
-      <div className="flex flex-col gap-4 max-w-44">
+      <div className="flex flex-col gap-4 max-w-xs overflow-auto">
         <h2 className="font-semibold">Telegram WebApp Data</h2>
         {initData ? (
           <pre className="text-xs">{JSON.stringify(initData, null, 2)}</pre>
