@@ -46,11 +46,6 @@ This will start the Vite development server. Open your browser and navigate to `
 ### Building for Production
 
 To build the app for production:
-
-```bash
-npm run build
-```
-or
 ```bash
 yarn build
 ```
