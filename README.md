@@ -57,6 +57,34 @@ yarn build
 
 This will generate a production-ready build in the `dist` folder.
 
+## 🤖 Attaching Your Mini App to a Telegram Bot
+
+To make your Mini App accessible through Telegram, you need to attach it to a bot. Here's how to do it using BotFather:
+
+1. Open Telegram and search for [@BotFather](https://t.me/botfather).
+
+2. Start a chat with BotFather and use the `/newbot` command to create a new bot if you haven't already.
+
+3. Once you have a bot, use the `/mybots` command to list your bots.
+
+4. Select the bot you want to attach your Mini App to.
+
+5. Choose the "Bot Settings" option.
+
+6. Select "Menu Button" or "Menu Buttons" (depending on your BotFather version).
+
+7. Choose "Configure menu button" or "Add menu button" to add a new button.
+
+8. Send the text you want to appear on the button (e.g., "Open Mini App").
+
+9. For the URL, enter the URL where your Mini App is hosted. If you're still developing, you can use your local development URL (e.g., `http://localhost:5173`). For production, use your deployed app URL.
+
+10. BotFather will confirm that the menu button has been added to your bot.
+
+Now, when users interact with your bot, they'll see a menu button that opens your Mini App.
+
+Remember to update the URL to your production URL before releasing your bot to the public!
+
 ## 📖 Documentation
 
 For more information on how to develop Telegram Mini Apps, refer to the following resources:
