@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+# Telegram Mini App Boilerplate with React and Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides a boilerplate for creating Telegram Mini Apps using React and Vite. It's designed to help you quickly set up and start developing your Telegram Mini App with modern web technologies.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ Fast development with [Vite](https://vitejs.dev/)
+- ⚛️ [React](https://reactjs.org/) for building user interfaces
+- 📱 [Telegram Mini App SDK](https://github.com/twa-dev/SDK) integration
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- 📦 [TypeScript](https://www.typescriptlang.org/) for type-safe code
+- 🧭 [React Router](https://reactrouter.com/) for navigation
+- 🧹 [ESLint](https://eslint.org/) for code linting
+- 🐶 [Husky](https://typicode.github.io/husky/) for Git hooks
+- 🚨 [Commitlint](https://commitlint.js.org/) for conventional commit messages
 
-## Expanding the ESLint configuration
+## 📚 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (version 14 or later)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/etherwave-labs/telegram-mini-app-react-boilerplate.git
+   cd telegram-mini-app-react-boilerplate
+   ```
+
+2. Install dependencies:
+   ```bash
+   yarn
+   ```
+
+### Development
+
+To start the development server:
+```bash
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will start the Vite development server. Open your browser and navigate to `http://localhost:5173` to see your app.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Building for Production
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To build the app for production:
+
+```bash
+npm run build
 ```
+or
+```bash
+yarn build
+```
+
+This will generate a production-ready build in the `dist` folder.
+
+## 📖 Documentation
+
+For more information on how to develop Telegram Mini Apps, refer to the following resources:
+
+- [Official Telegram Mini Apps Documentation](https://core.telegram.org/bots/webapps#initializing-mini-apps)
+- [Telegram Mini Apps Community Documentation](https://docs.telegram-mini-apps.com/)
+
+## 📜 Scripts
+
+- `dev`: Start the development server
+- `build`: Build the project for production
+- `lint`: Run ESLint to check for code issues
+- `preview`: Preview the production build locally
+
+## 🤝 Contributing
+This boilerplate is maintained by [Etherwave Labs](https://etherwavelabs.com).
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/your-repo-name/issues).
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
