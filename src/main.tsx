@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 
 import App from "@/App.tsx";
 import "@/index.css";
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       <>
         <h1 className="text-4xl font-bold">Test Page</h1>
         <div className="flex flex-col justify-center">
-          <a href={`/`}>Back</a>
+          <Link to={`/`}>Back</Link>
         </div>
       </>
     ),
