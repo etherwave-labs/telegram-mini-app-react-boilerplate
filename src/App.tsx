@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as Telegram from "@twa-dev/types";
+import WebApp from "@twa-dev/sdk";
 
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -11,22 +12,16 @@ function App() {
   const [initData, setInitData] = useState<Telegram.WebAppInitData>();
 
   useEffect(() => {
-    console.log("useTelegram");
-    function initTg() {
-      if (
-        typeof window !== "undefined" &&
-        window.Telegram &&
-        window.Telegram.WebApp
-      ) {
-        const tgData = window.Telegram.WebApp.initDataUnsafe;
-        console.log("✅ Telegram WebApp Data Available", tgData);
-        setInitData(tgData);
-      } else {
-        console.log("You should open this app in Telegram");
-      }
+    const data = WebApp.initDataUnsafe;
+    if (Object.keys(data).length === 0 && data.constructor === Object) {
+      console.error("❌ Open this app in Telegram");
+      return;
     }
-    initTg();
+    console.log("✅Telegram WebApp Available", data);
+    setInitData(data);
+    WebApp.expand();
   }, []);
+
   return (
     <div className="flex flex-col gap-10">
       <Link to={`/test`}>Go to Test Page</Link>
@@ -42,7 +37,11 @@ function App() {
 
       <div className="flex flex-col gap-4">
         <h2 className="font-semibold">Telegram WebApp Data</h2>
-        <pre>{JSON.stringify(initData, null, 2)}</pre>
+        {initData ? (
+          <pre>{JSON.stringify(initData, null, 2)}</pre>
+        ) : (
+          <p>Loading initData...</p>
+        )}
       </div>
 
       <div className="flex flex-col justify-center">
