@@ -1,14 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import * as Telegram from "@twa-dev/types";
+
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [initData, setInitData] = useState<Telegram.WebAppInitData>({});
 
+  useEffect(() => {
+    console.log("useTelegram");
+    function initTg() {
+      if (
+        typeof window !== "undefined" &&
+        window.Telegram &&
+        window.Telegram.WebApp
+      ) {
+        const tgData = window.Telegram.WebApp.initDataUnsafe;
+        console.log("✅ Telegram WebApp Data Available", tgData);
+        setInitData(tgData);
+      } else {
+        console.log("You should open this app in Telegram");
+      }
+    }
+    initTg();
+  }, []);
   return (
     <div className="flex flex-col gap-10">
-      <a href={`/test`}>Go to Test Page</a>
+      <Link to={`/test`}>Go to Test Page</Link>
       <div className="flex gap-4 items-center justify-center">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -18,6 +39,12 @@ function App() {
         </a>
       </div>
       <h1 className="text-4xl font-bold">Hello world!</h1>
+
+      <div className="flex flex-col gap-4">
+        <h2 className="font-semibold">Telegram WebApp Data</h2>
+        <pre>{JSON.stringify(initData, null, 2)}</pre>
+      </div>
+
       <div className="flex flex-col justify-center">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
