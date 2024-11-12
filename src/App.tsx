@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [initData, setInitData] = useState<Telegram.WebAppInitData | undefined>();
+  const [initData, setInitData] = useState();
 
   useEffect(() => {
     const data = WebApp.initData;
