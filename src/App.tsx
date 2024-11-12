@@ -12,7 +12,7 @@ function App() {
   const [initData, setInitData] = useState<Telegram.WebAppInitData>();
 
   useEffect(() => {
-    const data = WebApp.initDataUnsafe;
+    const data = WebApp.initData;
     if (Object.keys(data).length === 0 && data.constructor === Object) {
       console.error("❌ Open this app in Telegram");
       return;
